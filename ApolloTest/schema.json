@@ -1,0 +1,5732 @@
+{
+  "data": {
+    "__schema": {
+      "queryType": {
+        "name": "Query"
+      },
+      "mutationType": {
+        "name": "MutationQuery"
+      },
+      "types": [
+        {
+          "kind": "OBJECT",
+          "name": "Query",
+          "fields": [
+            {
+              "name": "allPresets",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Preset"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "allRoles",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Role"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "allUsers",
+              "args": [
+                {
+                  "name": "productionId",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "studioId",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "orderBy",
+                  "type": {
+                    "kind": "ENUM",
+                    "name": "OrderByType"
+                  },
+                  "defaultValue": "name_desc"
+                },
+                {
+                  "name": "pagination",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PaginationInput"
+                  },
+                  "defaultValue": "{size : 50, number : 1}"
+                },
+                {
+                  "name": "fromDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "toDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PaginationResults"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "getUser",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "User"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "me",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "User"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "ping",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "metrics",
+              "args": [
+                {
+                  "name": "fromDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "toDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Metrics"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "allGeoLocations",
+              "args": [
+                {
+                  "name": "productionIds",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "onlyVisible",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean"
+                  },
+                  "defaultValue": "false"
+                },
+                {
+                  "name": "pagination",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PaginationInput"
+                  },
+                  "defaultValue": "{size : 50, number : 1}"
+                },
+                {
+                  "name": "orderBy",
+                  "type": {
+                    "kind": "ENUM",
+                    "name": "OrderByType"
+                  },
+                  "defaultValue": "date_desc"
+                },
+                {
+                  "name": "fromDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "toDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "searchQuery",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PaginationResults"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "getGeoLocation",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "GeoLocation"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "allTags",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Tag"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "allStudios",
+              "args": [
+                {
+                  "name": "pagination",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PaginationInput"
+                  },
+                  "defaultValue": "{size : 50, number : 1}"
+                },
+                {
+                  "name": "onlyVisible",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean"
+                  },
+                  "defaultValue": "false"
+                },
+                {
+                  "name": "orderBy",
+                  "type": {
+                    "kind": "ENUM",
+                    "name": "OrderByType"
+                  },
+                  "defaultValue": "name_asc"
+                },
+                {
+                  "name": "fromDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "toDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PaginationResults"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "getStudio",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Studio"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "search",
+              "args": [
+                {
+                  "name": "query",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "types",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "ENUM",
+                      "name": "SearchType"
+                    }
+                  },
+                  "defaultValue": "[ThreeDimensionalModel, Photoset, ScriptLocation, GeoLocation]"
+                },
+                {
+                  "name": "pagination",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PaginationInput"
+                  },
+                  "defaultValue": "{size : 50, number : 1}"
+                },
+                {
+                  "name": "fromDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "toDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "productionId",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "scriptLocationIds",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "geoLocationIds",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "orderBy",
+                  "type": {
+                    "kind": "ENUM",
+                    "name": "OrderByType"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PaginationResults"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "allScriptLocations",
+              "args": [
+                {
+                  "name": "productionIds",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "onlyVisible",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean"
+                  },
+                  "defaultValue": "false"
+                },
+                {
+                  "name": "orderBy",
+                  "type": {
+                    "kind": "ENUM",
+                    "name": "OrderByType"
+                  },
+                  "defaultValue": "date_desc"
+                },
+                {
+                  "name": "pagination",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PaginationInput"
+                  },
+                  "defaultValue": "{size : 50, number : 1}"
+                },
+                {
+                  "name": "fromDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "toDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "searchQuery",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PaginationResults"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "getScriptLocation",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ScriptLocation"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "allProductions",
+              "args": [
+                {
+                  "name": "studioId",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "onlyVisible",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean"
+                  },
+                  "defaultValue": "false"
+                },
+                {
+                  "name": "pagination",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PaginationInput"
+                  },
+                  "defaultValue": "{size : 50, number : 1}"
+                },
+                {
+                  "name": "orderBy",
+                  "type": {
+                    "kind": "ENUM",
+                    "name": "OrderByType"
+                  },
+                  "defaultValue": "name_asc"
+                },
+                {
+                  "name": "fromDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "toDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PaginationResults"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "getProduction",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Production"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "allThreeDimensionalModels",
+              "args": [
+                {
+                  "name": "productionId",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "scriptLocationIds",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "geoLocationIds",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "onlyFavorites",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean"
+                  },
+                  "defaultValue": "false"
+                },
+                {
+                  "name": "orderBy",
+                  "type": {
+                    "kind": "ENUM",
+                    "name": "OrderByType"
+                  },
+                  "defaultValue": "date_desc"
+                },
+                {
+                  "name": "pagination",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PaginationInput"
+                  },
+                  "defaultValue": "{size : 50, number : 1}"
+                },
+                {
+                  "name": "fromDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "toDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "searchQuery",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "status",
+                  "type": {
+                    "kind": "ENUM",
+                    "name": "ThreeDimensionalModelStatus"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PaginationResults"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "getSteps",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ThreeDimensionalModelDisplayStep"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "getThreeDimensionalModel",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ThreeDimensionalModel"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "allPhotosets",
+              "args": [
+                {
+                  "name": "productionId",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "scriptLocationIds",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "geoLocationIds",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "orderBy",
+                  "type": {
+                    "kind": "ENUM",
+                    "name": "OrderByType"
+                  },
+                  "defaultValue": "date_desc"
+                },
+                {
+                  "name": "pagination",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PaginationInput"
+                  },
+                  "defaultValue": "{size : 50, number : 1}"
+                },
+                {
+                  "name": "fromDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "toDate",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "searchQuery",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PaginationResults"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "getPhoto",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "uri",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Photo"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "getPhotosetChunk",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PhotosetChunk"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "getPhotoset",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Photoset"
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "SCALAR",
+          "name": "ID",
+          "description": "Built-in ID"
+        },
+        {
+          "kind": "SCALAR",
+          "name": "String",
+          "description": "Built-in String"
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Boolean",
+          "description": "Built-in Boolean"
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MutationQuery",
+          "fields": [
+            {
+              "name": "createPreset",
+              "args": [
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "description",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "params",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "LIST",
+                      "ofType": {
+                        "kind": "INPUT_OBJECT",
+                        "name": "Param"
+                      }
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Preset"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createUser",
+              "args": [
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "username",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "roles",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "LIST",
+                      "ofType": {
+                        "kind": "SCALAR",
+                        "name": "String"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "productionIds",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "LIST",
+                      "ofType": {
+                        "kind": "SCALAR",
+                        "name": "ID"
+                      }
+                    }
+                  }
+                },
+                {
+                  "name": "studioIds",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "LIST",
+                      "ofType": {
+                        "kind": "SCALAR",
+                        "name": "ID"
+                      }
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "User"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deletePreset",
+              "args": [
+                {
+                  "name": "presetId",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "forgotPassword",
+              "args": [
+                {
+                  "name": "username",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "login",
+              "args": [
+                {
+                  "name": "username",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "password",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "User"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "resetPassword",
+              "args": [
+                {
+                  "name": "username",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "token",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "newPassword",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "updatePreset",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "description",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "params",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "Param"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Preset"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "updateUser",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "username",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "roles",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "studioIds",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "productionIds",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "disabled",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "User"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createScriptLocation",
+              "args": [
+                {
+                  "name": "productionId",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "description",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "thumbnailUri",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ScriptLocation"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deleteScriptLocation",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "updateScriptLocation",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "description",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "thumbnailUri",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "visible",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ScriptLocation"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createGeoLocation",
+              "args": [
+                {
+                  "name": "productionId",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "description",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "thumbnailUri",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "GeoLocation"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deleteGeoLocation",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "updateGeoLocation",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "description",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "thumbnailUri",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "visible",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "GeoLocation"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createStudio",
+              "args": [
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Studio"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deleteStudio",
+              "args": [
+                {
+                  "name": "studioId",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "updateStudio",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "visible",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Studio"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createPhotosetChunk",
+              "description": "Creates a photo set chunk",
+              "args": [
+                {
+                  "name": "name",
+                  "description": " The photoset chunk name",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "description",
+                  "description": " The photoset chunk description",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "photosetId",
+                  "description": " The photoset id the chunk belongs to",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "order",
+                  "description": "Position of the chunk in order (starting at 1)",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "Int"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PhotosetChunk"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deletePhotosetChunk",
+              "description": "Deletes a photo set chunk",
+              "args": [
+                {
+                  "name": "id",
+                  "description": " The photoset chunk id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deletePhotoset",
+              "description": "Deletes a photoset",
+              "args": [
+                {
+                  "name": "id",
+                  "description": " The photoset id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "updatePhoto",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "photosetChunks",
+                  "description": "Photoset Chunk ID's the photo belongs to",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Photo"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "updatePhotosetChunk",
+              "description": " The photoset chunk description",
+              "args": [
+                {
+                  "name": "id",
+                  "description": " The photoset chunk id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "name",
+                  "description": " The photoset chunk name",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "description",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "order",
+                  "description": "The position of the chunk within the photoset order",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "photos",
+                  "description": "List of Photo ID's associated with the chunk. This will replace any existing relationships.",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PhotosetChunk"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "updatePhotoset",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "description",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "assets",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "scriptLocationIds",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "geoLocationId",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "productionId",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "referenceUri",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Photoset"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "uploadPhotoset",
+              "description": "Uploads a photo set",
+              "args": [
+                {
+                  "name": "name",
+                  "description": " The photoset name",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "description",
+                  "description": " The photoset description name",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "productionId",
+                  "description": "The production the photoset belongs to",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "assets",
+                  "description": "A list of S3 URIs",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "chunks",
+                  "description": "A list of asset chunks",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "UploadPhotosetChunk"
+                    }
+                  }
+                },
+                {
+                  "name": "scriptLocationIds",
+                  "description": "List of script locations the photoset belongs to",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  },
+                  "defaultValue": "[]"
+                },
+                {
+                  "name": "geoLocationId",
+                  "description": "Geo location the photoset belongs to",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "userTags",
+                  "description": "User provided tags",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  },
+                  "defaultValue": "[]"
+                },
+                {
+                  "name": "referenceUri",
+                  "description": " The uri for the reference photo for turntable models",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Photoset"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deleteThreeDimensionalModel",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "generateThreeDimensionalModel",
+              "description": "Generates a 3D Model from the provided photo set",
+              "args": [
+                {
+                  "name": "name",
+                  "description": " The model name",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "productionId",
+                  "description": "The production the model belongs to",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "photosetId",
+                  "description": "The photo set to use to generate the model",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "preset",
+                  "description": "The preset to use to generate the model",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "settings",
+                  "description": "Custom settings used to generate the model, requires the preset to be 'advanced'",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "INPUT_OBJECT",
+                      "name": "Param"
+                    }
+                  },
+                  "defaultValue": "[]"
+                },
+                {
+                  "name": "scriptLocationIds",
+                  "description": "List of script locations the model belongs to",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  },
+                  "defaultValue": "[]"
+                },
+                {
+                  "name": "geoLocationId",
+                  "description": "Geo location the model belongs to",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "userTags",
+                  "description": "User provided tags",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  },
+                  "defaultValue": "[]"
+                },
+                {
+                  "name": "systemTags",
+                  "description": "System generated tags",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  },
+                  "defaultValue": "[]"
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ThreeDimensionalModel"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "retryThreeDimensionalModel",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "stopThreeDimensionalModel",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "updateThreeDimensionalModel",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "userTags",
+                  "description": "List of user tags to assign to the 3D model. Replaces the existing tags.",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "systemTags",
+                  "description": "List of system tags to assign to the 3D model. Replaces the existing tags.",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "productionId",
+                  "description": "Production ID the model is associated with",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "geoLocationId",
+                  "description": "The Geo Location ID the model is associated with",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "scriptLocations",
+                  "description": "List of script locations the model is associated with",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ThreeDimensionalModel"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "uploadThreeDimensionalModel",
+              "description": "Uploads a 3D Model",
+              "args": [
+                {
+                  "name": "name",
+                  "description": " The model name",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "productionId",
+                  "description": "The production the model belongs to",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "modelUri",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "thumbnailUri",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                },
+                {
+                  "name": "scriptLocationIds",
+                  "description": "List of script locations the model belongs to",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  },
+                  "defaultValue": "[]"
+                },
+                {
+                  "name": "geoLocationId",
+                  "description": "Geo location the model belongs to",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "ID"
+                  }
+                },
+                {
+                  "name": "userTags",
+                  "description": "User provided tags",
+                  "type": {
+                    "kind": "LIST",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  },
+                  "defaultValue": "[]"
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "ThreeDimensionalModel"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createProduction",
+              "args": [
+                {
+                  "name": "studioId",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Production"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deleteProduction",
+              "args": [
+                {
+                  "name": "productionId",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "updateProduction",
+              "args": [
+                {
+                  "name": "id",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "ID"
+                    }
+                  }
+                },
+                {
+                  "name": "name",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                },
+                {
+                  "name": "visible",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Production"
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Int",
+          "description": "Built-in Int"
+        },
+        {
+          "kind": "OBJECT",
+          "name": "GeoLocation",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "description",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createdAt",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "modifiedAt",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "visible",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "thumbnail",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Photo"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "production",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Production"
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "PaginationItem"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "Identifiable"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "CreatedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "ModifiedAt"
+            }
+          ]
+        },
+        {
+          "kind": "SCALAR",
+          "name": "DateTime",
+          "description": "Date/Time Field"
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "Param",
+          "inputFields": [
+            {
+              "name": "name",
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Tag",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "tag",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ScriptLocation",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "description",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createdAt",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "modifiedAt",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "visible",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "thumbnail",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Photo"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "production",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Production"
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "PaginationItem"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "Identifiable"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "CreatedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "ModifiedAt"
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Production",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createdAt",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "modifiedAt",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "visible",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "studio",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Studio"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "scriptLocations",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "ScriptLocation"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "geoLocations",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "GeoLocation"
+                  }
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "PaginationItem"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "CreatedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "ModifiedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "Identifiable"
+            }
+          ]
+        },
+        {
+          "kind": "ENUM",
+          "name": "OrderByType",
+          "enumValues": [
+            {
+              "name": "name_asc",
+              "isDeprecated": false
+            },
+            {
+              "name": "name_desc",
+              "isDeprecated": false
+            },
+            {
+              "name": "date_asc",
+              "isDeprecated": false
+            },
+            {
+              "name": "date_desc",
+              "isDeprecated": false
+            },
+            {
+              "name": "rank_desc",
+              "isDeprecated": false
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ThreeDimensionalModelStep",
+          "fields": [
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "progress",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "Asset",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "Photo"
+            }
+          ]
+        },
+        {
+          "kind": "ENUM",
+          "name": "SearchType",
+          "enumValues": [
+            {
+              "name": "ThreeDimensionalModel",
+              "isDeprecated": false
+            },
+            {
+              "name": "Photoset",
+              "isDeprecated": false
+            },
+            {
+              "name": "GeoLocation",
+              "isDeprecated": false
+            },
+            {
+              "name": "ScriptLocation",
+              "isDeprecated": false
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "SystemTag",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "tag",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Preset",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createdAt",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "modifiedAt",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "description",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "params",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "ParamOutput"
+                  }
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "CreatedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "ModifiedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "Identifiable"
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ErrorMetrics",
+          "fields": [
+            {
+              "name": "error",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "percentage",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "count",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "SCALAR",
+          "name": "Float",
+          "description": "Built-in Float"
+        },
+        {
+          "kind": "OBJECT",
+          "name": "MetricsBreakdown",
+          "fields": [
+            {
+              "name": "profile",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "averageProcessingTime",
+              "description": "average duration of processing time (measured in seconds per photo)",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "averageImageCount",
+              "description": "average number of photos per model",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "successfulModelPercentage",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "failedModelPercentage",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "stoppedModelPercentage",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalModels",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalSuccessfulModels",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalFailedModels",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalStoppedModels",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "averageAlignedPercentage",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "Identifiable",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "GeoLocation"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "ScriptLocation"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Production"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Preset"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Photo"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "User"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "PhotosetChunk"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "ThreeDimensionalModel"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Studio"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Photoset"
+            }
+          ]
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "ModifiedAt",
+          "fields": [
+            {
+              "name": "modifiedAt",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime"
+              },
+              "isDeprecated": false
+            }
+          ],
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "GeoLocation"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "ScriptLocation"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Production"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Preset"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Photo"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "User"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "PhotosetChunk"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "ThreeDimensionalModel"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Studio"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Photoset"
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Photo",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createdAt",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "modifiedAt",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "systemTags",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "Tag"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "uri",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "status",
+              "description": "The status of the photo, values can be UPLOADING or COMPLETED",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deleted",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "aligned",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "url",
+              "args": [
+                {
+                  "name": "width",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "height",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "extension",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "photosetChunks",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PhotosetChunk"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "Asset"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "PaginationItem"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "CreatedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "ModifiedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "Identifiable"
+            }
+          ]
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "PaginationInput",
+          "inputFields": [
+            {
+              "name": "size",
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              }
+            },
+            {
+              "name": "number",
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "User",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createdAt",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "modifiedAt",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "username",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "roles",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "disabled",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "studios",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "Studio"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "productions",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "Production"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "apiKey",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "PaginationItem"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "Identifiable"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "CreatedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "ModifiedAt"
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PhotosetChunk",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "description",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createdAt",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "modifiedAt",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "photosetId",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "order",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "assets",
+              "description": "photos associated with this photoset chunk",
+              "args": [
+                {
+                  "name": "pagination",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PaginationInput"
+                  },
+                  "defaultValue": "{size : 50, number : 1}"
+                }
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PaginationResults"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "PaginationItem"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "Identifiable"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "CreatedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "ModifiedAt"
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ThreeDimensionalModel",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "thumbnail",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Photo"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "production",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Production"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createdBy",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createdAt",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "modifiedAt",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "scriptLocations",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ScriptLocation"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "geoLocation",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "GeoLocation"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "longitude",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "latitude",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "vertices",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "polygons",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "systemTags",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Tag"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "userTags",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Tag"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "preset",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "settings",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ParamOutput"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "jobId",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "status",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "output",
+              "args": [
+                {
+                  "name": "type",
+                  "type": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "SCALAR",
+                      "name": "String"
+                    }
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "error",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "progress",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "startedAt",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "endedAt",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "photoset",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Photoset"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "favorite",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "assets",
+              "description": "assets used for this specific model, may differ from image set's assets",
+              "args": [
+                {
+                  "name": "pagination",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PaginationInput"
+                  },
+                  "defaultValue": "{size : 50, number : 1}"
+                }
+              ],
+              "type": {
+                "kind": "OBJECT",
+                "name": "PaginationResults"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "steps",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "ThreeDimensionalModelStep"
+                  }
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "PaginationItem"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "Identifiable"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "CreatedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "ModifiedAt"
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ParamOutput",
+          "fields": [
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "value",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Studio",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createdAt",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "modifiedAt",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "visible",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "productions",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "Production"
+                  }
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "PaginationItem"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "Identifiable"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "CreatedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "ModifiedAt"
+            }
+          ]
+        },
+        {
+          "kind": "ENUM",
+          "name": "ThreeDimensionalModelStatus",
+          "enumValues": [
+            {
+              "name": "QUEUED",
+              "isDeprecated": false
+            },
+            {
+              "name": "STARTED",
+              "isDeprecated": false
+            },
+            {
+              "name": "COMPLETED",
+              "isDeprecated": false
+            },
+            {
+              "name": "STOPPED",
+              "isDeprecated": false
+            },
+            {
+              "name": "FAILED",
+              "isDeprecated": false
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Metrics",
+          "fields": [
+            {
+              "name": "successfulModelPercentage",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "failedModelPercentage",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "stoppedModelPercentage",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalModels",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalSuccessfulModels",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalFailedModels",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalStoppedModels",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "currentAgisoftWorkers",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "averageQueueTime",
+              "description": "in seconds",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "breakdown",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "MetricsBreakdown"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "errorMetrics",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "ErrorMetrics"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalModelRetries",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalSuccessfulModelRetries",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalFailedModelRetries",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "successfulModelRetriesPercentage",
+              "description": "percent of successful models that were restarted",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "failedModelRetriesPercentage",
+              "description": "percent of failed models that were restarted",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Float"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "INPUT_OBJECT",
+          "name": "UploadPhotosetChunk",
+          "inputFields": [
+            {
+              "name": "name",
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              }
+            },
+            {
+              "name": "description",
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              }
+            },
+            {
+              "name": "order",
+              "type": {
+                "kind": "SCALAR",
+                "name": "Int"
+              }
+            },
+            {
+              "name": "assets",
+              "description": "photos associated with this photoset chunk",
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ExifData",
+          "fields": [
+            {
+              "name": "longitude",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "latitude",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deviceModel",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deviceMake",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "exposureTime",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "fNumber",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "ISOSpeed",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "focalLength",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "fileType",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "imageHeight",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "imageWidth",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "imageBits",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "OBJECT",
+          "name": "PaginationResults",
+          "fields": [
+            {
+              "name": "totalPages",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "currentPage",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalItems",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "items",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "INTERFACE",
+                    "name": "PaginationItem"
+                  }
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "OBJECT",
+          "name": "ThreeDimensionalModelDisplayStep",
+          "fields": [
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "key",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "canChunk",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "onlyChunk",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "PaginationItem",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "GeoLocation"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "ScriptLocation"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Production"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Photo"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "User"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "PhotosetChunk"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "ThreeDimensionalModel"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Studio"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Photoset"
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Role",
+          "fields": [
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "OBJECT",
+          "name": "Photoset",
+          "fields": [
+            {
+              "name": "id",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "ID"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "description",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createdBy",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "createdAt",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "modifiedAt",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "DateTime"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "assets",
+              "description": "assets used for this specific model, may differ from image set's assets",
+              "args": [
+                {
+                  "name": "pagination",
+                  "type": {
+                    "kind": "INPUT_OBJECT",
+                    "name": "PaginationInput"
+                  },
+                  "defaultValue": "{size : 50, number : 1}"
+                },
+                {
+                  "name": "photosetChunkId",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "PaginationResults"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "chunks",
+              "description": "assets used for this specific model, may differ from image set's assets",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "PhotosetChunk"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "scriptLocations",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ScriptLocation"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "geoLocation",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "GeoLocation"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "production",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "Production"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "systemTags",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Tag"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "userTags",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "Tag"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "referenceUri",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "referenceKanvasUrl",
+              "args": [
+                {
+                  "name": "width",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "height",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Int"
+                  }
+                },
+                {
+                  "name": "extension",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "String"
+                  }
+                }
+              ],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "exifData",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ExifData"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "totalPhotoCount",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "uploadedPhotoCount",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Int"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "models",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "ThreeDimensionalModel"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": [
+            {
+              "kind": "INTERFACE",
+              "name": "PaginationItem"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "Identifiable"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "CreatedAt"
+            },
+            {
+              "kind": "INTERFACE",
+              "name": "ModifiedAt"
+            }
+          ]
+        },
+        {
+          "kind": "INTERFACE",
+          "name": "CreatedAt",
+          "fields": [
+            {
+              "name": "createdAt",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "DateTime"
+                }
+              },
+              "isDeprecated": false
+            }
+          ],
+          "possibleTypes": [
+            {
+              "kind": "OBJECT",
+              "name": "GeoLocation"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "ScriptLocation"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Production"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Preset"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Photo"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "User"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "PhotosetChunk"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "ThreeDimensionalModel"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Studio"
+            },
+            {
+              "kind": "OBJECT",
+              "name": "Photoset"
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "__Schema",
+          "description": "A GraphQL Introspection defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, the entry points for query, mutation, and subscription operations.",
+          "fields": [
+            {
+              "name": "types",
+              "description": "A list of all types supported by this server.",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "__Type"
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "queryType",
+              "description": "The type that query operations will be rooted at.",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__Type"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "mutationType",
+              "description": "If this server supports mutation, the type that mutation operations will be rooted at.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "__Type"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "directives",
+              "description": "'A list of all directives supported by this server.",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "__Directive"
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "subscriptionType",
+              "description": "'If this server support subscription, the type that subscription operations will be rooted at.",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "__Type"
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "OBJECT",
+          "name": "__Type",
+          "fields": [
+            {
+              "name": "kind",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "ENUM",
+                  "name": "__TypeKind"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "description",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "fields",
+              "args": [
+                {
+                  "name": "includeDeprecated",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean"
+                  },
+                  "defaultValue": "false"
+                }
+              ],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "__Field"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "interfaces",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "__Type"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "possibleTypes",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "__Type"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "enumValues",
+              "args": [
+                {
+                  "name": "includeDeprecated",
+                  "type": {
+                    "kind": "SCALAR",
+                    "name": "Boolean"
+                  },
+                  "defaultValue": "false"
+                }
+              ],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "__EnumValue"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "inputFields",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "OBJECT",
+                    "name": "__InputValue"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "ofType",
+              "args": [],
+              "type": {
+                "kind": "OBJECT",
+                "name": "__Type"
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "ENUM",
+          "name": "__TypeKind",
+          "description": "An enum describing what kind of type a given __Type is",
+          "enumValues": [
+            {
+              "name": "SCALAR",
+              "description": "Indicates this type is a scalar.",
+              "isDeprecated": false
+            },
+            {
+              "name": "OBJECT",
+              "description": "Indicates this type is an object. `fields` and `interfaces` are valid fields.",
+              "isDeprecated": false
+            },
+            {
+              "name": "INTERFACE",
+              "description": "Indicates this type is an interface. `fields` and `possibleTypes` are valid fields.",
+              "isDeprecated": false
+            },
+            {
+              "name": "UNION",
+              "description": "Indicates this type is a union. `possibleTypes` is a valid field.",
+              "isDeprecated": false
+            },
+            {
+              "name": "ENUM",
+              "description": "Indicates this type is an enum. `enumValues` is a valid field.",
+              "isDeprecated": false
+            },
+            {
+              "name": "INPUT_OBJECT",
+              "description": "Indicates this type is an input object. `inputFields` is a valid field.",
+              "isDeprecated": false
+            },
+            {
+              "name": "LIST",
+              "description": "Indicates this type is a list. `ofType` is a valid field.",
+              "isDeprecated": false
+            },
+            {
+              "name": "NON_NULL",
+              "description": "Indicates this type is a non-null. `ofType` is a valid field.",
+              "isDeprecated": false
+            }
+          ]
+        },
+        {
+          "kind": "OBJECT",
+          "name": "__Field",
+          "fields": [
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "description",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "args",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "__InputValue"
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "type",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__Type"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "isDeprecated",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deprecationReason",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "OBJECT",
+          "name": "__InputValue",
+          "fields": [
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "description",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "type",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "OBJECT",
+                  "name": "__Type"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "defaultValue",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "OBJECT",
+          "name": "__EnumValue",
+          "fields": [
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "String"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "description",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "isDeprecated",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "deprecationReason",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "OBJECT",
+          "name": "__Directive",
+          "fields": [
+            {
+              "name": "name",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "description",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String"
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "locations",
+              "args": [],
+              "type": {
+                "kind": "LIST",
+                "ofType": {
+                  "kind": "NON_NULL",
+                  "ofType": {
+                    "kind": "ENUM",
+                    "name": "__DirectiveLocation"
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "args",
+              "args": [],
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "LIST",
+                  "ofType": {
+                    "kind": "NON_NULL",
+                    "ofType": {
+                      "kind": "OBJECT",
+                      "name": "__InputValue"
+                    }
+                  }
+                }
+              },
+              "isDeprecated": false
+            },
+            {
+              "name": "onOperation",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean"
+              },
+              "isDeprecated": true,
+              "deprecationReason": "Use `locations`."
+            },
+            {
+              "name": "onFragment",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean"
+              },
+              "isDeprecated": true,
+              "deprecationReason": "Use `locations`."
+            },
+            {
+              "name": "onField",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "Boolean"
+              },
+              "isDeprecated": true,
+              "deprecationReason": "Use `locations`."
+            }
+          ],
+          "interfaces": []
+        },
+        {
+          "kind": "ENUM",
+          "name": "__DirectiveLocation",
+          "description": "An enum describing valid locations where a directive can be placed",
+          "enumValues": [
+            {
+              "name": "QUERY",
+              "description": "Indicates the directive is valid on queries.",
+              "isDeprecated": false
+            },
+            {
+              "name": "MUTATION",
+              "description": "Indicates the directive is valid on mutations.",
+              "isDeprecated": false
+            },
+            {
+              "name": "FIELD",
+              "description": "Indicates the directive is valid on fields.",
+              "isDeprecated": false
+            },
+            {
+              "name": "FRAGMENT_DEFINITION",
+              "description": "Indicates the directive is valid on fragment definitions.",
+              "isDeprecated": false
+            },
+            {
+              "name": "FRAGMENT_SPREAD",
+              "description": "Indicates the directive is valid on fragment spreads.",
+              "isDeprecated": false
+            },
+            {
+              "name": "INLINE_FRAGMENT",
+              "description": "Indicates the directive is valid on inline fragments.",
+              "isDeprecated": false
+            },
+            {
+              "name": "SCHEMA",
+              "description": "Indicates the directive is valid on a schema SDL definition.",
+              "isDeprecated": false
+            },
+            {
+              "name": "SCALAR",
+              "description": "Indicates the directive is valid on a scalar SDL definition.",
+              "isDeprecated": false
+            },
+            {
+              "name": "OBJECT",
+              "description": "Indicates the directive is valid on an object SDL definition.",
+              "isDeprecated": false
+            },
+            {
+              "name": "FIELD_DEFINITION",
+              "description": "Indicates the directive is valid on a field SDL definition.",
+              "isDeprecated": false
+            },
+            {
+              "name": "ARGUMENT_DEFINITION",
+              "description": "Indicates the directive is valid on a field argument SDL definition.",
+              "isDeprecated": false
+            },
+            {
+              "name": "INTERFACE",
+              "description": "Indicates the directive is valid on an interface SDL definition.",
+              "isDeprecated": false
+            },
+            {
+              "name": "UNION",
+              "description": "Indicates the directive is valid on an union SDL definition.",
+              "isDeprecated": false
+            },
+            {
+              "name": "ENUM",
+              "description": "Indicates the directive is valid on an enum SDL definition.",
+              "isDeprecated": false
+            },
+            {
+              "name": "ENUM_VALUE",
+              "description": "Indicates the directive is valid on an enum value SDL definition.",
+              "isDeprecated": false
+            },
+            {
+              "name": "INPUT_OBJECT",
+              "description": "Indicates the directive is valid on an input object SDL definition.",
+              "isDeprecated": false
+            },
+            {
+              "name": "INPUT_FIELD_DEFINITION",
+              "description": "Indicates the directive is valid on an input object field SDL definition.",
+              "isDeprecated": false
+            }
+          ]
+        }
+      ],
+      "directives": [
+        {
+          "name": "include",
+          "description": "Directs the executor to include this field or fragment only when the `if` argument is true",
+          "locations": [
+            "FIELD",
+            "FRAGMENT_SPREAD",
+            "INLINE_FRAGMENT"
+          ],
+          "args": [
+            {
+              "name": "if",
+              "description": "Included when true.",
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "skip",
+          "description": "Directs the executor to skip this field or fragment when the `if`'argument is true.",
+          "locations": [
+            "FIELD",
+            "FRAGMENT_SPREAD",
+            "INLINE_FRAGMENT"
+          ],
+          "args": [
+            {
+              "name": "if",
+              "description": "Skipped when true.",
+              "type": {
+                "kind": "NON_NULL",
+                "ofType": {
+                  "kind": "SCALAR",
+                  "name": "Boolean"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "defer",
+          "description": "This directive allows results to be deferred during execution",
+          "locations": [
+            "FIELD"
+          ],
+          "args": []
+        }
+      ]
+    },
+    "secureIp": true
+  },
+  "errors": [],
+  "dataPresent": true,
+  "extensions": {
+    "queryExecutionTime": "50ms"
+  }
+}

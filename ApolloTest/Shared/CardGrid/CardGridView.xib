@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="CN2-db-4eD" customClass="CardGridView" customModule="ApolloTest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cDj-fS-gLk">
+                    <rect key="frame" x="15" y="64" width="384" height="2"/>
+                    <color key="backgroundColor" red="0.1215686275" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="12v-Ay-4gD"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Swn-O5-cPH">
+                    <rect key="frame" x="15" y="20" width="10" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Images" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYt-mc-RpR">
+                    <rect key="frame" x="40" y="15" width="88" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                    <color key="textColor" red="0.1215686275" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cwr-WB-8zk">
+                    <rect key="frame" x="7.6666666666666572" y="73.666666666666686" width="399" height="655"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewLayout key="collectionViewLayout" id="f4Y-Vg-lFI"/>
+                    <connections>
+                        <outlet property="dataSource" destination="CN2-db-4eD" id="SWO-tH-Opx"/>
+                        <outlet property="delegate" destination="CN2-db-4eD" id="TGy-P1-vpK"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="OAa-iv-SGT"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="uYt-mc-RpR" firstAttribute="top" secondItem="OAa-iv-SGT" secondAttribute="top" constant="15" id="2OF-iT-Iyv"/>
+                <constraint firstItem="Swn-O5-cPH" firstAttribute="centerY" secondItem="uYt-mc-RpR" secondAttribute="centerY" id="48Q-r4-zw9"/>
+                <constraint firstItem="OAa-iv-SGT" firstAttribute="bottom" secondItem="cwr-WB-8zk" secondAttribute="bottom" constant="7.5" id="BpW-me-wXy"/>
+                <constraint firstItem="Swn-O5-cPH" firstAttribute="leading" secondItem="OAa-iv-SGT" secondAttribute="leading" constant="15" id="NdR-MG-a98"/>
+                <constraint firstItem="cDj-fS-gLk" firstAttribute="top" secondItem="uYt-mc-RpR" secondAttribute="bottom" constant="15" id="RL5-0b-Kut"/>
+                <constraint firstItem="cwr-WB-8zk" firstAttribute="top" secondItem="cDj-fS-gLk" secondAttribute="bottom" constant="7.5" id="WJT-zg-gdr"/>
+                <constraint firstItem="cDj-fS-gLk" firstAttribute="leading" secondItem="Swn-O5-cPH" secondAttribute="leading" id="ZVq-FI-yqY"/>
+                <constraint firstItem="cDj-fS-gLk" firstAttribute="centerX" secondItem="CN2-db-4eD" secondAttribute="centerX" id="d19-eQ-1DV"/>
+                <constraint firstItem="uYt-mc-RpR" firstAttribute="leading" secondItem="Swn-O5-cPH" secondAttribute="trailing" constant="15" id="sWY-bB-XB1"/>
+                <constraint firstItem="cwr-WB-8zk" firstAttribute="leading" secondItem="OAa-iv-SGT" secondAttribute="leading" constant="7.5" id="tUf-4e-cl3"/>
+                <constraint firstItem="OAa-iv-SGT" firstAttribute="trailing" secondItem="cwr-WB-8zk" secondAttribute="trailing" constant="7.5" id="uqK-oK-5WP"/>
+            </constraints>
+            <connections>
+                <outlet property="collectionView" destination="cwr-WB-8zk" id="1gh-wt-OJJ"/>
+                <outlet property="iconLabel" destination="Swn-O5-cPH" id="sfF-G5-jWy"/>
+                <outlet property="titleLabel" destination="uYt-mc-RpR" id="p9Z-GD-76l"/>
+            </connections>
+            <point key="canvasLocation" x="190" y="11"/>
+        </view>
+    </objects>
+</document>

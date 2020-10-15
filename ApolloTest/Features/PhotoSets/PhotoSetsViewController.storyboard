@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KEE-aG-Kfx">
+    <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Sets View Controller-->
+        <scene sceneID="ORf-pI-2bh">
+            <objects>
+                <viewController id="KEE-aG-Kfx" customClass="PhotoSetsViewController" customModule="ApolloTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lz6-4E-191">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eu8-4S-CB1">
+                                <rect key="frame" x="0.0" y="70" width="1366" height="934"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="l0R-lQ-QDt"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="eu8-4S-CB1" firstAttribute="leading" secondItem="l0R-lQ-QDt" secondAttribute="leading" id="1JK-Zh-Jms"/>
+                            <constraint firstItem="eu8-4S-CB1" firstAttribute="top" secondItem="l0R-lQ-QDt" secondAttribute="top" constant="70" id="Jaf-bc-gtL"/>
+                            <constraint firstItem="l0R-lQ-QDt" firstAttribute="trailing" secondItem="eu8-4S-CB1" secondAttribute="trailing" id="dH4-Qa-X03"/>
+                            <constraint firstItem="l0R-lQ-QDt" firstAttribute="bottom" secondItem="eu8-4S-CB1" secondAttribute="bottom" id="ytP-Sl-R5r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cardGridContainerView" destination="eu8-4S-CB1" id="E90-5i-2db"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dTF-2l-eBw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-145" y="115"/>
+        </scene>
+    </scenes>
+</document>
